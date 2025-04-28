@@ -1,0 +1,255 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.door {
+  background-color: #000;
+}
+
+.container__door {
+  position: relative;
+  width: 260px;
+  height: 400px;
+}
+.container__door .door {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 260px;
+  height: 400px;
+  background-color: #4169ff;
+  border-radius: 130px 130px 0 0;
+  opacity: 0;
+  animation: doorAppear 1.5s ease-in-out forwards;
+}
+.container__door .stair-1,
+.container__door .stair-2,
+.container__door .stair-3,
+.container__door .stair-4 {
+  position: absolute;
+  background-color: #000;
+  right: 0;
+  opacity: 0;
+  transform: translateX(100%);
+}
+.container__door .stair-1 {
+  top: 170px;
+  width: 52px;
+  height: 50px;
+  animation: stairAppear 1s ease-in-out 1.5s forwards;
+}
+.container__door .stair-2 {
+  top: 230px;
+  width: 104px;
+  height: 50px;
+  animation: stairAppear 1s ease-in-out 1.8s forwards;
+}
+.container__door .stair-3 {
+  top: 290px;
+  width: 156px;
+  height: 50px;
+  animation: stairAppear 1s ease-in-out 2.1s forwards;
+}
+.container__door .stair-4 {
+  top: 350px;
+  width: 208px;
+  height: 50px;
+  animation: stairAppear 1s ease-in-out 2.4s forwards;
+}
+
+@keyframes doorAppear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes stairAppear {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.gift {
+  background-color: #ac474b;
+}
+
+.container__gift {
+  height: 540px;
+  width: 400px;
+  overflow: hidden;
+}
+.container__gift .gift__bantik {
+  position: relative;
+  width: 400px;
+  height: 140px;
+  display: flex;
+  justify-content: center;
+  animation: bounceIn 1s ease-out forwards;
+  animation-delay: 0.5s;
+  opacity: 0;
+}
+.container__gift .gift__bantik .gift__bantik-1,
+.container__gift .gift__bantik .gift__bantik-2 {
+  height: 100px;
+  width: 100px;
+  background-color: #fff;
+  position: relative;
+}
+.container__gift .gift__bantik .gift__bantik-1 .gift__bantik-1-1,
+.container__gift .gift__bantik .gift__bantik-1 .gift__bantik-1-2,
+.container__gift .gift__bantik .gift__bantik-2 .gift__bantik-1-1,
+.container__gift .gift__bantik .gift__bantik-2 .gift__bantik-1-2 {
+  height: 50px;
+  width: 50px;
+  background-color: #ac474b;
+  position: absolute;
+  top: 25px;
+}
+.container__gift .gift__bantik .gift__bantik-1 {
+  border-radius: 50px 50px 0 50px;
+}
+.container__gift .gift__bantik .gift__bantik-1 .gift__bantik-1-1 {
+  border-radius: 25px 25px 0 25px;
+  right: 25px;
+}
+.container__gift .gift__bantik .gift__bantik-2 {
+  border-radius: 50px 50px 50px 0;
+}
+.container__gift .gift__bantik .gift__bantik-2 .gift__bantik-1-2 {
+  border-radius: 25px 25px 25px 0;
+  left: 25px;
+}
+.container__gift .gift__squares {
+  width: 400px;
+  height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-between;
+  align-items: center;
+}
+.container__gift .gift__squares .gift__square-1,
+.container__gift .gift__squares .gift__square-2,
+.container__gift .gift__squares .gift__square-3,
+.container__gift .gift__squares .gift__square-4 {
+  height: 180px;
+  width: 180px;
+  background-color: #fff;
+  transform: scale(0);
+  animation: popIn 0.6s ease-out forwards;
+}
+.container__gift .gift__squares .gift__square-1 {
+  animation-delay: 1s;
+}
+.container__gift .gift__squares .gift__square-2 {
+  animation-delay: 1.2s;
+}
+.container__gift .gift__squares .gift__square-3 {
+  animation-delay: 1.4s;
+}
+.container__gift .gift__squares .gift__square-4 {
+  animation-delay: 1.6s;
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.3) translateY(-200px);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05) translateY(30px);
+  }
+  70% {
+    transform: scale(0.9) translateY(-10px);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes popIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.bell {
+  background-color: #191919;
+}
+.bell .container__bell {
+  position: relative;
+  width: 300px;
+  height: 420px;
+  animation: swing 2s ease-in-out infinite;
+  transform-origin: top center;
+}
+.bell .container__bell .bell__holder {
+  width: 120px;
+  height: 120px;
+  background-color: #824b20;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 60px;
+  right: 90px;
+}
+.bell .container__bell .bell__body {
+  width: 300px;
+  height: 300px;
+  background-color: #e08027;
+  border-radius: 230px 230px 40px 40px;
+  position: relative;
+  z-index: 2;
+}
+.bell .container__bell .bell__knob {
+  width: 120px;
+  height: 120px;
+  background-color: #f2ad43;
+  border-radius: 50%;
+  position: absolute;
+  top: -60px;
+  right: 90px;
+}
+
+@keyframes swing {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.login {
+  background-color: #191919;
+}
+
+/*# sourceMappingURL=main.css.map */
